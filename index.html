@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Curriculum Vitae</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8f9fa;
+      --text: #212529;
+      --card-bg: #ffffff;
+      --card-border: #dee2e6;
+      --link: #0d6efd;
+      --bg-gradient: linear-gradient(135deg, #f5f7fb 0%, #eef2f7 50%, #e8edf4 100%);
+    }
+    body {
+      background: var(--bg-gradient);
+      color: var(--text);
+    }
+    body.dark-mode {
+      --bg: #070b12;
+      --text: #e9ecef;
+      --card-bg: #0f1320;
+      --card-border: #1e2a40;
+      --link: #4db5ff;
+      --bg-gradient: radial-gradient(circle at 20% 20%, rgba(0,136,255,.1), transparent 60%), radial-gradient(circle at 80% 70%, rgba(0,200,255,.08), transparent 60%), linear-gradient(135deg, #070b12 0%, #0a1224 50%, #070b12 100%);
+    }
+    .navbar, .card, .list-group-item {
+      background-color: var(--card-bg) !important;
+      border-color: var(--card-border) !important;
+    }
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .header-section {
+      padding: 3rem 0;
+    }
+    .typed {
+      min-height: 1.5rem;
+      display: inline-block;
+      border-right: 2px solid currentColor;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .progress-bar {
+      transition: width 1.2s ease;
+    }
+    .section-title {
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    h1, .section-title { text-shadow: 0 0 10px rgba(77,181,255,.25); }
+    .typed { text-shadow: 0 0 8px rgba(77,181,255,.4); }
+    .card { box-shadow: 0 12px 30px rgba(15,25,40,.25); }
+    body.dark-mode .card { box-shadow: 0 14px 36px rgba(20,30,60,.35); }
+    body.dark-mode .navbar { background-color: transparent !important; }
+    .card { transition: transform .25s ease, box-shadow .25s ease; }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(15,25,40,.3); }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.revealed { opacity: 1; transform: translateY(0); }
+    #toTop { position: fixed; right: 1rem; bottom: 1rem; z-index: 1050; display: none; border-radius: 999px; padding: .6rem .75rem; backdrop-filter: blur(8px); }
+    #toTop.show { display: inline-flex; }
+    #toTop i { font-size: 1.1rem; }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg border-bottom sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">CV Rahmat Hidayat</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#tentang">Tentang</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pendidikan">Pendidikan</a></li>
+          <li class="nav-item"><a class="nav-link" href="#keahlian">Keahlian</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pengalaman">Pengalaman</a></li>
+        </ul>
+        <div class="ms-lg-3">
+          <button id="themeToggle" class="btn btn-outline-secondary">
+            <i class="bi bi-moon-stars me-1"></i>
+            Mode Gelap
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="header-section">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-12 col-md-3 text-center">
+          <img src="./123.jpg" alt="Foto Profil Rahmat Hidayat" class="rounded-circle img-fluid shadow-sm">
+        </div>
+        <div class="col-12 col-md-9">
+          <h1 class="fw-bold mb-2">Rahmat Hidayat</h1>
+          <div class="h5 text-muted mb-3">
+            <span id="typed" class="typed"></span>
+          </div>
+          <div class="row g-3">
+            <div class="col-12 col-md-6 reveal">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-2">
+                    <i class="bi bi-envelope me-2"></i>
+                    <a href="mailto:email@rahmat.com" data-bs-toggle="tooltip" title="Kirim email">email@rahmat.com</a>
+                  </div>
+                  <div class="d-flex align-items-center mb-2">
+                    <i class="bi bi-telephone me-2"></i>
+                    <a href="tel:+6281234567890" data-bs-toggle="tooltip" title="Hubungi nomor">+62 812-3456-7890</a>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-geo-alt me-2"></i>
+                    <span>talaga majalengka, jawabarat</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 reveal">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-2">
+                    <i class="bi bi-linkedin me-2"></i>
+                    <a href="#" target="_blank" rel="noopener" data-bs-toggle="tooltip" title="Buka LinkedIn">LinkedIn</a>
+                  </div>
+                  <div class="d-flex align-items-center mb-2">
+                    <i class="bi bi-github me-2"></i>
+                    <a href="#" target="_blank" rel="noopener" data-bs-toggle="tooltip" title="Buka GitHub">GitHub</a>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-globe me-2"></i>
+                    <a href="#" target="_blank" rel="noopener" data-bs-toggle="tooltip" title="Buka Website/Portfolio">Website/Portfolio</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="pb-5">
+    <section id="tentang" class="py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="card reveal">
+              <div class="card-body">
+                <h2 class="section-title">Tentang Saya</h2>
+                <p>Profesional di bidang teknologi dengan minat pada pengembangan perangkat lunak, berfokus pada pembuatan solusi yang efektif, scalable, dan mudah dirawat. Terbiasa belajar teknologi terbaru untuk meningkatkan kualitas produk.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pendidikan" class="py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="card reveal">
+              <div class="card-body">
+                <h2 class="section-title">Riwayat Pendidikan</h2>
+                <div class="list-group">
+                  <div class="list-group-item">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">Teknologi Rekayasa Perangkat Lunak</h5>
+                      <small>2017–2026</small>
+                    </div>
+                    <p class="mb-1"> smp,manahijulhuda,sma Tepadu manahijulhuda S1 Teknologi Rekayasa Perangkat Lunak.</p>
+                    <small>politehnik manahijulhuda</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="keahlian" class="py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="card reveal">
+              <div class="card-body" id="skills">
+                <h2 class="section-title">Keahlian Teknis</h2>
+                <div class="mb-3">
+                  <div class="d-flex justify-content-between"><span>HTML5</span><span class="text-muted">90%</span></div>
+                  <div class="progress" role="progressbar" aria-label="HTML5">
+                    <div class="progress-bar bg-primary" style="width:0%" data-target="90" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <div class="d-flex justify-content-between"><span>CSS3</span><span class="text-muted">85%</span></div>
+                  <div class="progress" role="progressbar" aria-label="CSS3">
+                    <div class="progress-bar bg-success" style="width:0%" data-target="85" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <div class="d-flex justify-content-between"><span>JavaScript</span><span class="text-muted">80%</span></div>
+                  <div class="progress" role="progressbar" aria-label="JavaScript">
+                    <div class="progress-bar bg-warning" style="width:0%" data-target="80" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pengalaman" class="py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="card reveal">
+              <div class="card-body">
+                <h2 class="section-title">Pengalaman/Proyek</h2>
+                <div class="list-group">
+                  <div class="list-group-item">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">Proyek A</h5>
+                      <small>2025</small>
+                    </div>
+                    <p class="mb-1">Aplikasi web untuk manajemen tugas dengan autentikasi dan dashboard responsif.</p>
+                    <small>Stack:, JavaScript</small>
+                  </div>
+                  <div class="list-group-item">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">Proyek B</h5>
+                      <small>2024</small>
+                    </div>
+                    <p class="mb-1">Landing page produk dengan performa optimal dan aksesibilitas baik.</p>
+                    <small>Stack: HTML, CSS, Bootstrap</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-top py-3">
+    <div class="container text-center">
+      <small>&copy; 2026 CV Rahmat Hidayat</small>
+    </div>
+  </footer>
+  <button id="toTop" class="btn btn-outline-light"><i class="bi bi-arrow-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    function applyTheme(dark) {
+      const body = document.body;
+      const icon = themeToggle.querySelector('i');
+      if (dark) {
+        body.classList.add('dark-mode');
+        icon.className = 'bi bi-sun me-1';
+        themeToggle.classList.remove('btn-outline-secondary');
+        themeToggle.classList.add('btn-outline-light');
+        themeToggle.innerHTML = '<i class="bi bi-sun me-1"></i>Mode Terang';
+      } else {
+        body.classList.remove('dark-mode');
+        icon.className = 'bi bi-moon-stars me-1';
+        themeToggle.classList.remove('btn-outline-light');
+        themeToggle.classList.add('btn-outline-secondary');
+        themeToggle.innerHTML = '<i class="bi bi-moon-stars me-1"></i>Mode Gelap';
+      }
+    }
+    const storedTheme = localStorage.getItem('theme');
+    applyTheme(storedTheme ? storedTheme === 'dark' : true);
+    themeToggle.addEventListener('click', () => {
+      const next = !document.body.classList.contains('dark-mode');
+      applyTheme(next);
+      localStorage.setItem('theme', next ? 'dark' : 'light');
+    });
+
+    const typedEl = document.getElementById('typed');
+    const typedStrings = [
+      'Pengembang Perangkat Lunak',
+      'Berorientasi pada Kualitas',
+      'Fokus pada Pengalaman Pengguna'
+    ];
+    let sIndex = 0;
+    let cIndex = 0;
+    let deleting = false;
+    function typeTick() {
+      const s = typedStrings[sIndex];
+      typedEl.textContent = s.slice(0, cIndex);
+      if (!deleting) {
+        if (cIndex < s.length) {
+          cIndex++;
+          setTimeout(typeTick, 90);
+        } else {
+          deleting = true;
+          setTimeout(typeTick, 1200);
+        }
+      } else {
+        if (cIndex > 0) {
+          cIndex--;
+          setTimeout(typeTick, 45);
+        } else {
+          deleting = false;
+          sIndex = (sIndex + 1) % typedStrings.length;
+          setTimeout(typeTick, 350);
+        }
+      }
+    }
+    typeTick();
+
+    const skillsSection = document.getElementById('skills');
+    const bars = skillsSection.querySelectorAll('.progress-bar[data-target]');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          bars.forEach(bar => {
+            if (bar.dataset.animated !== 'true') {
+              const target = parseInt(bar.dataset.target, 10);
+              bar.style.width = target + '%';
+              bar.setAttribute('aria-valuenow', target);
+              bar.dataset.animated = 'true';
+            }
+          });
+        }
+      });
+    }, { threshold: 0.25 });
+    observer.observe(skillsSection);
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('revealed'); });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => revealObs.observe(el));
+
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.forEach(el => new bootstrap.Tooltip(el));
+
+    const toTop = document.getElementById('toTop');
+    function onScrollTopBtn() {
+      if (window.scrollY > 240) {
+        toTop.classList.add('show');
+      } else {
+        toTop.classList.remove('show');
+      }
+    }
+    window.addEventListener('scroll', onScrollTopBtn);
+    toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  </script>
+</body>
+</html>
